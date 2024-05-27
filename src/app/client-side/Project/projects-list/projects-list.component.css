@@ -1,6 +1,6 @@
 #project-section{
     width: 100%;
-    min-height: 96vh;
+    min-height: calc(96vh - 22px);
     max-height: fit-content; 
 background: rgb(245,245,245);
 padding-top: 3%;

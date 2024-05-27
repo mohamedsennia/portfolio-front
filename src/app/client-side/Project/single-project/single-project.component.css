@@ -1,6 +1,6 @@
 :host{
     width: 100vw;
-    min-height: 96vh;
+    min-height: calc(96vh - 22px);
     max-height: fit-content; 
     background-color: #252934;
     display: block;

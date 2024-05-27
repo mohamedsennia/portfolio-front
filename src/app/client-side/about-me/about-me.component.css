@@ -1,6 +1,6 @@
 #about-me{
 width: 100%;
-min-height: 96vh
+min-height: calc(96vh - 22px);
 }
 h1{
     width: fit-content;
