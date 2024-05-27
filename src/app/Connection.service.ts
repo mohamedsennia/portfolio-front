@@ -11,7 +11,7 @@ import { Project } from "./Project/Project.model";
 export class ConnectionService{
 
 
-    private link="http://protfolio-backend-production.up.railway.app/api";
+    private link="https://protfolio-backend-production.up.railway.app/api";
     private user:User;
     private logedIn:boolean;
 constructor(private httpClient:HttpClient) {this.logedIn=false; this.user=new User("","")
