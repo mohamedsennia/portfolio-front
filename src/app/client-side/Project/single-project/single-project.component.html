@@ -1,0 +1,36 @@
+<div id="project">
+    
+    <h1 id="project-title">{{project._name}}</h1>
+    <div class="slides-container">
+    <div id="img-slide">
+        <i class="fa-solid fa-angle-left fa-4x" style="color: #D61B6D; left: 0;" (click)="prevImage()" *ngIf="index>0"></i>
+       
+            <img class="image" *ngFor="let image of project._images;let i =index" [src]="image" alt="" [@carouselAnimation]="getState(i)" >
+       
+        <i class="fa-solid fa-angle-right fa-4x" style="color: #D61B6D; right: 0;" (click)="nextImage()" *ngIf="index<project._images.length-1"></i>
+    </div>
+</div>
+    <div id="indecators">
+        <div *ngFor="let i of project._images;let j =index" [class]="getActive(j)">
+           
+        </div>
+    </div>
+    <div id="links">
+        <a [href]="project._codeURL" target="_blank" class="link" *ngIf="project._codeURL!='' && project._codeURL!=null">
+          Code</a>
+        
+        <a [href]="project._demoURL" target="_blank" class="link"*ngIf="project._demoURL!='' && project._demoURL!=null">
+            Demo
+        </a>
+    </div>
+    <div id="project-details">
+        <div id="techs">
+            <h3 >Technologies used :</h3>
+            <span class="tech" *ngFor="let tech of project._technologies">{{tech._name}}</span>
+        </div>
+        <div id="Desciription">
+            <h3>Desciription :</h3>
+            <p>{{project._description}}</p>
+        </div>
+    </div>
+</div>

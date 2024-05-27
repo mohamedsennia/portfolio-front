@@ -1,0 +1,13 @@
+<div class="edit-education">
+    <h1>Edit an Education</h1>
+    <form [formGroup]="editEducationForm" (ngSubmit)="editEducation()">
+        <div> <label for="">Degree Name</label> <input type="text" formControlName="DegreeName"> </div>
+            <div> <label for="">School Name</label>  <input type="text" formControlName="SchoolName"> </div>
+                <div> <label for="">Start Date</label>    <input type="date" formControlName="startDate"> </div>
+                    <div id="overflow"> <label  for="">End Date</label> <br> <input  type="date" formControlName="endDate"><label class="checkbox  ">still going</label><input (click)="toggleStillGoing()" class="checkbox" type="checkbox"> </div>
+       
+<div><label for="">Descripition</label>   <textarea  formControlName="Descripition" id="" cols="30" rows="10"></textarea> </div>
+
+        <input type="submit" value="Edit">
+    </form>
+</div>

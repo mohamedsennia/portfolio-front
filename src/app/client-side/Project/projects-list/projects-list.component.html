@@ -1,0 +1,13 @@
+<section id="project-section">
+    <h1>Projects</h1>
+    <div id="projects-container">
+        <div class="project" *ngFor="let project of projects" [style]="getBackgroundImage(project)">
+            <div class="project-details">
+               
+                <h2 class="project-title">{{project._name}}</h2>
+                <div class="button" [routerLink]="['/project/'+project._id]">Learn More </div>
+            </div>
+        </div>
+        
+    </div>
+</section>

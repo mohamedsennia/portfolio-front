@@ -1,0 +1,40 @@
+#introduction{
+    width: 100%;
+    min-height: 92vh;
+    max-height: fit-content;
+    background-color: #252934;
+    color:  white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+.introduction-text{
+    font-weight: bolder;
+    font-size: 30pt;
+}
+#name{
+    color: #E31B6D;
+}
+.button{
+    margin-top: 1%;
+    width: fit-content;
+    padding: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    font-size: 18pt;
+    transition: 0.3s;
+    cursor: pointer;
+}
+i{
+    transition: transform 0.3s ease; 
+}
+.button:hover{
+background-color: cyan;
+}
+.button:hover i{
+    transform: rotate(90deg);
+}

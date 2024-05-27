@@ -1,0 +1,18 @@
+<div class="show-fields">
+    <table>
+        <tr>
+            <th>N</th>
+            <th>Technologie</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+    <tr *ngFor="let technologie of technologies;let i=index">
+        <td>{{i+1}}</td>
+        <td><i [class]="technologie._icon"></i> {{technologie._name}}</td>
+        <td><i (click)="edit(technologie.id)" class="clickable fa-regular fa-pen-to-square fa-xl"></i></td>
+        <td><i (click)="delete(technologie)" class="clickable fa-solid fa-trash fa-xl" style="color: #63E6BE;"></i></td>
+    </tr>
+    </table>
+    <div class="Button clickable" [routerLink]="['/admin-panel/technologies/addTechnologie']">Add Technologie</div>
+</div>
+<!--<div [routerLink]="['/admin-panel/fields/addField']">add Field</div>-->

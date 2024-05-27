@@ -1,0 +1,56 @@
+<div class="add-project">
+    <h1>Add a new Project </h1>
+    <form [formGroup]="addProjectForm" (ngSubmit)="addProject()">
+       <label for="">Name</label> <input type="text" formControlName="ProjectName"><br>
+       <label for="">The link for the code</label>  <input type="text" formControlName="codeURL"><br>
+       <label for="">The link for the demo</label>    <input type="text" formControlName="demoURL"><br>
+       <label for="">Fields</label>
+       <select formControlName="Fields">
+        <option *ngFor="let field of AllFields" [ngValue]="field">{{field._fieldName}}</option>
+            
+       </select>
+       <button style="width: 15%; aspect-ratio: 2.5;" (click)="addField()" type="button"> add</button>
+       <br>
+       <div *ngFor="let field of project._fields" style="width: unset; padding: 5px; background-color: rgb(223, 223, 228); margin-right: 5px;margin: 5px; display: inline-block;"> 
+        <i (click)="removeField(field)" class="fa-solid fa-x fa-xs" style="color: #ffffff; cursor: pointer;"></i>
+        <label style=" margin-left:3% ;width: fit-content;">{{field._fieldName}}</label>
+      </div>
+       <br>
+
+       <label for="">Technologies</label>
+       <select formControlName="Technologies">
+        <option *ngFor="let technologie of AllTechnologies" [ngValue]="technologie">{{technologie._name}}</option>
+        
+       </select>
+     <button style="width: 15%; aspect-ratio: 2.5;" (click)="addTech()" type="button"> add</button>
+       <br>
+       <div *ngFor="let technologie of project._technologies" style="width: unset; padding: 5px; background-color: rgb(223, 223, 228); margin-right: 5px;margin: 5px; display: inline-block;">
+        <i (click)="removeTech(technologie)" class="fa-solid fa-x fa-xs" style="color: #ffffff; cursor: pointer;"></i>
+
+       <label style=" margin-left:3% ;width: fit-content;" >{{technologie._name}}</label>
+      </div>
+       <br>
+       <label for="" *ngIf="ExperienceProject">Experience:</label>
+       <select formControlName="Experience" *ngIf="ExperienceProject">
+        
+        <option *ngFor="let experience of AllExperiences" [ngValue]="experience">{{experience._role+" at "+experience._company}}</option>
+            
+       </select>
+       <label class="checkbox  ">Experience project</label><input (click)="toggleExperienceProject()" class="checkbox" type="checkbox">
+       <br>
+      
+       
+       <label for="">Descripition</label>   <textarea  formControlName="Descripition" id="" cols="30" rows="10"></textarea><br>
+       <input type="file" (change)="onFileSelected($event)"><br>
+     
+        <input type="submit" value="Add" >
+       
+    </form>
+    <div id="imagesContainer">
+      <div class="imageContainer" *ngFor="let image of project._images">
+        <i class="fa-solid fa-x fa-l delete-image" style="color: #e90101;" (click)="removeImage(image)"></i>
+        <img [src]="image" alt="" >
+      </div>
+    
+  </div>
+</div>

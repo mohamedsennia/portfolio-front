@@ -1,0 +1,7 @@
+<div class="edit-field">
+    <h1>Edit a Field</h1>
+    <form [formGroup]="editFieldForm" (ngSubmit)="editField()">
+        <input type="text" formControlName="FieldName">
+        <input type="submit" value="Edit">
+    </form>
+</div>

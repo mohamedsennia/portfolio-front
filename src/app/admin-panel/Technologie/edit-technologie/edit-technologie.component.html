@@ -1,0 +1,10 @@
+
+
+<div class="edit-tech">
+    <h1>Edit a Technologie</h1>
+    <form [formGroup]="editTechForm" (ngSubmit)="editTechnologie()">
+        <input type="text" formControlName="TechName">
+        <input type="text" formControlName="TechIcon" placeholder="Technologie Icon">
+        <input type="submit" value="Edit">
+    </form>
+</div>

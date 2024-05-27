@@ -1,0 +1,50 @@
+#about-me{
+width: 100%;
+min-height: 95vh
+}
+h1{
+    width: fit-content;
+    margin:2% auto;
+    color:  #252934;
+    font-size: 35pt;
+    overflow: hidden;
+    animation: typing 6s steps(100, end), blink-caret 0.5s step-end infinite alternate;
+    white-space: nowrap;
+}
+
+#myImg{
+    aspect-ratio: 1;
+    width: 15%;
+    border-radius: 50%;
+    margin: auto;
+    display: block;
+   
+}
+
+
+#details{
+    display: flex;
+    width: 100%; 
+    margin: auto;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   font-family: sans-serif;
+}
+#summary{
+    font-weight: bold;
+    font-size: 10pt;
+
+display: flex;
+flex-direction: column;align-items: center;justify-content: center;
+}
+h2{
+    font-size: 25pt;
+    margin: 1% 0%;
+}
+i{
+    margin-right: 2%;
+    margin-bottom: 5%;
+   
+}
+

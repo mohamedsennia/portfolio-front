@@ -1,0 +1,14 @@
+<div class="add-tech">
+    <h1>Add a Technologie</h1>
+    <form [formGroup]="addTechnologieForm" (ngSubmit)="addField()">
+        <div>
+        <label for="TechName">Technologie Name</label>
+        <input type="text" formControlName="TechName" placeholder="Technologie Name">
+        </div>
+        <div>
+            <label for="TechIcon">Technologie Icon</label>
+        <input type="text" formControlName="TechIcon" placeholder="Technologie Icon">
+        </div>
+        <input type="submit" value="Add">
+    </form>
+</div>

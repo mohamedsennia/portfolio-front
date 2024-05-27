@@ -1,0 +1,24 @@
+<div class="show-educations">
+    <table>
+        <tr>
+            <th>N</th>
+            <th>Degree</th>
+            <th>School</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+    <tr *ngFor="let education of educations;let i=index">
+        <td>{{i+1}}</td>
+        <td>{{education._degree}}</td>
+        <td>{{education._school}}</td>
+        <td>{{education._startDate.toISOString().split('T')[0]}}</td>
+        <td>{{education._endDate.toISOString().split('T')[0]}}</td>
+        <td><i (click)="edit(education.id)" class="clickable fa-regular fa-pen-to-square fa-xl"></i></td>
+        <td><i (click)="delete(education)" class="clickable fa-solid fa-trash fa-xl" style="color: #63E6BE;"></i></td>
+    </tr>
+    </table>
+    <div class="Button clickable" [routerLink]="['/admin-panel/educations/addEducation']">Add Education</div>
+</div>
+<!--<div [routerLink]="['/admin-panel/fields/addField']">add Field</div>-->

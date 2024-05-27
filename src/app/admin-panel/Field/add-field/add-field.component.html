@@ -1,0 +1,12 @@
+<div class="add-field">
+    <h1>Add a Field</h1>
+
+    <form [formGroup]="addFieldForm" (ngSubmit)="addField()">
+        <div>
+            <label for="FieldName"> Field Name</label> 
+            <input type="text" formControlName="FieldName">
+        </div>
+       
+        <input type="submit" value="Add">
+    </form>
+</div>

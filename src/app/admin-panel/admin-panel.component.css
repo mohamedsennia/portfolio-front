@@ -1,0 +1,12 @@
+#admin-panel{
+    display: inline-flex;
+    min-height: 100vh;
+    height: fit-content;
+    
+}
+:host {
+    display: block;
+    min-height: 100vh;
+    height: fit-content;
+  }
+  

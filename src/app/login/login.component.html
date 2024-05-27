@@ -1,0 +1,12 @@
+<div class="page">
+    <div class="container">
+        <h1>Log in</h1>
+        <form  id="login-form" [formGroup]="loginForm" (ngSubmit)="login()">
+            <input autocomplete="email" placeholder="example@email.com" type="text" formControlName="email" >
+            <input autocomplete="current-password" placeholder="Your password" type="password" formControlName="password">
+            <input id="submit" type="submit" value="Login">
+
+        </form>
+        <span class="error" *ngIf="error">{{error}}</span>
+    </div>
+</div>

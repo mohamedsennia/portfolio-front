@@ -1,0 +1,16 @@
+.side-bar{
+    background-color: black;
+    height:  100%;
+    width: 15vw;
+    color: white;
+    
+}
+.clickable{cursor: pointer;}
+.element{
+    width: 100%;
+    height: 50px;
+    display: flex;justify-content: center;align-items: center;
+}
+.element:hover{
+    background-color: rgb(51, 14, 138);
+}

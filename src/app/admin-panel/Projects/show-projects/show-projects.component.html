@@ -1,0 +1,24 @@
+<div class="show-projects">
+    <table>
+        <tr>
+            <th>N</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Technologies</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            
+          </tr>
+    <tr *ngFor="let project of projects;let i=index">
+        <td>{{i+1}}</td>
+   
+        <td>{{project._name}}</td>
+        <td>{{project._type}}</td>
+        <td><label *ngFor="let technologie of project._technologies" [class]="technologie._icon"></label></td>
+        <td><i (click)="edit(project._id)" class="clickable fa-regular fa-pen-to-square fa-xl"></i></td>
+        <td><i (click)="delete(project)" class="clickable fa-solid fa-trash fa-xl" style="color: #63E6BE;"></i></td>
+    </tr>
+    </table>
+    <div class="Button clickable" [routerLink]="['/admin-panel/projects/addProject']">Add Project</div>
+</div>
+<!--<div [routerLink]="['/admin-panel/fields/addField']">add Field</div>-->

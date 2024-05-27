@@ -1,0 +1,20 @@
+<div class="dot" style="top:15%;"></div>
+<div class="line" ></div>
+<div class="experience-details">
+    <h1 class="job-title    ">{{experience._role}}</h1>
+    <div class="coordonates marge"> <h2>{{experience._company}}</h2> <span class="date">{{getDate()}}</span></div>
+    <div class="Description">
+        <h1>Description</h1>
+        <p class="marge">{{experience._description}}</p>
+    </div>
+    <div class="projects">
+        <h1>Projects</h1>
+        <div class="project marge" *ngFor="let project of experience._projects;let i=index;">
+        <h3 class="project-title">{{(i+1)+". "+project._name}}</h3>
+       <div class="project-details marge">
+        <p class="project-description marge">{{project._description}}</p>
+        <span class="marge">Technologies :</span><span class="tech" *ngFor="let tech of project._technologies">{{tech._name}}</span>
+       </div>
+        </div>
+    </div>
+</div>

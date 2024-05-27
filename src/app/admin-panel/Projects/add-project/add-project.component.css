@@ -1,0 +1,73 @@
+.add-project{
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 70px 0px;
+}
+form{
+   width: 50%;
+    margin-top: 5%;
+}
+label{
+    width: 18%;
+    display: inline-block;
+
+  
+    font-size: 1em;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+textarea{
+    width: 100%;
+}
+input,select{
+width: 50%;
+    aspect-ratio: 8;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 1%;
+ 
+    font-size: 1.2em;
+    resize:none;
+}
+label.checkbox{
+    width: 12%;
+    font-size: 0.9em; 
+    margin-left: 1%;
+}
+
+input.checkbox{
+    width: 5%;
+    aspect-ratio: 1;
+    margin-bottom: 0;
+}
+img{
+    width: 100%;
+   height: 100%;
+    display: block;
+    border: 1px rgb(166, 166, 170) solid;
+}
+.imageContainer{
+    
+}
+#imagesContainer{
+    margin-top: 2%;
+display: grid;
+grid-template-columns: 200px 200px 200px;
+column-gap: 5px;
+row-gap: 5px;
+}
+.delete-image{
+    position: relative;
+    z-index: 3;
+    cursor: pointer;
+    left: 95%;
+}
+:host{
+    height: fit-content;
+    display: block;
+}
+img{
+    height: 100%;
+}
