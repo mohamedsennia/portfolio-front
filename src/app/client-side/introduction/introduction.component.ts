@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./introduction.component.css']
 })
 export class IntroductionComponent {
-
+constructor(){
+  console.log("aaaaaaaaaaaaaaaaaaaaaaaaa")
+}
 }
