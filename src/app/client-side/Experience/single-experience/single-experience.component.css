@@ -1,6 +1,6 @@
 :host{
     display: block;
-    min-height: 92vh;
+    min-height: 96vh;
     max-height: fit-content;
     display: flex;
     max-width: 100vw;
