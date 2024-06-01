@@ -1,5 +1,10 @@
 <section id="project-section">
     <h1>Projects</h1>
+    <div id="fields">
+        <div [class]="checkSelected(-1)" (click)="select(-1)">ALL</div>
+        <div class="field-button" *ngFor="let field of fields;let i =index" (click)="select(i)" [class]="checkSelected(i)">{{field._fieldName}}</div>
+        
+    </div>
     <div id="projects-container">
         <div class="project" *ngFor="let project of projects" [style]="getBackgroundImage(project)">
             <div class="project-details">

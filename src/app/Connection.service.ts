@@ -11,7 +11,7 @@ import { Project } from "./Project/Project.model";
 export class ConnectionService{
 
 
-    private link="https://protfolio-backend-production.up.railway.app/api";
+    private link="http://localhost:8090/api";
     private user:User;
     private logedIn:boolean;
 constructor(private httpClient:HttpClient) {this.logedIn=false; this.user=new User("","")
@@ -222,6 +222,26 @@ getProjectById(id:number){
 
     return this.httpClient.get<any>(this.link+"/projects/getProject/"+id,{headers:headers_object}).pipe(map(param=>{
         return  new Project(param.id_project,param.name,param.description,param.images,param.codeURL,param.demoURL,param.type,param.fields,param.technologies,param.idExperience)
+    }))
+}
+filterProjects(filters){
+    var headers_object = new HttpHeaders().set('Content-Type', 'application/json')
+  console
+    return this.httpClient.get<any[]>(this.link+"/projects/filterProjects",{headers:headers_object,params:filters }  ).pipe(map(param=>{
+        let projects:Project[]=[]
+        
+        for(let P of param){
+            let techs:Technologie[]=[]
+            for(let tech of P.technologies){
+                
+                techs.push(new Technologie(tech.id_technologie,tech.name,tech.icon))
+                
+            }
+            P.technologies=techs
+           
+            projects.push(new Project(P.id_project,P.name,P.description,P.images,P.codeURL,P.demoURL,P.type,P.fields,P.technologies,P.ideExperience))
+        }
+        return projects
     }))
 }
 deleteProject(project:Project){

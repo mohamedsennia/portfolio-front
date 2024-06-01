@@ -1,5 +1,5 @@
 :host{
-    width: 100vw;
+ 
     min-height: calc(96vh - 22px);
     max-height: fit-content; 
     background-color: #252934;

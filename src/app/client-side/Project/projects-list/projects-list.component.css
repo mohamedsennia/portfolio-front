@@ -65,3 +65,35 @@ h1{
         padding-top: 25%;
         
     }
+#fields{
+width: 60%;
+margin: 2% auto;
+display: flex;
+align-items: center;
+justify-content: space-evenly;
+}
+.field-button{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #252934;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+    transition: 0.1s;
+}
+.field-button:hover{
+    background-color: white;
+    border: 3px solid #252934;
+    color: black;
+}
+.selected{
+    background-color: #E31B6D;
+}
+.selected:hover{
+ 
+    background-color: white;
+    border: 3px solid #E31B6D;
+    color: black;
+}

@@ -1,6 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Project } from "./Project.model";
-import { Observable, Subscription, map } from "rxjs";
+import { Observable, Subscription, filter, map } from "rxjs";
 import { ConnectionService } from "../Connection.service";
 import { Field } from "../Field/Field.model";
 import { Technologie } from "../Technologie/Technologie.model";
@@ -10,8 +10,10 @@ private projects:Project[]
 getProjectsSubscription:Subscription
 constructor(private connectionService:ConnectionService){
 this.projects=null;
+
 this.getProjectsSubscription=this.connectionService.getProjects().subscribe(param=>{
     this.projects=param
+    
 })
 }
 getProjects():Observable<Project[]>|Project[]{
@@ -34,6 +36,15 @@ getPersonalProjects():Observable<Project[]>{
         }))
     
 }
+filterProjects(filters):Observable<Project[]>{
+  
+        
+    return this.connectionService.filterProjects(filters).pipe(map(param=>{
+        
+        return param;
+    }))
+
+}
 getProjectById(id:number){
     return this.connectionService.getProjectById(id).pipe(map((param:any)=>{
       let  fields=[]
@@ -45,11 +56,12 @@ getProjectById(id:number){
         for(let tech of param.technologies){
             techs.push(new Technologie(tech.id_technologie,tech.name,tech.icon))
         }
-        console.log(techs)
+       
         param.technologies=techs
         param.fields=fields
         return param
     }));
+   
 }
 addProject(project:Project){
     return this.connectionService.addProject(project).pipe(map(param=>{

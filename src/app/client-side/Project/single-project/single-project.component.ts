@@ -24,7 +24,7 @@ import { ProjectService } from 'src/app/Project/Project.service';
       transform: 'translateX(100%)',
     
      })),
-     transition("current<=>*",animate(1000))
+     transition("current<=>*",animate(500))
      
    
      
