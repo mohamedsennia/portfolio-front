@@ -123,7 +123,7 @@ formData.append('file', file);
 
 this.connectionService.uploadFile(formData).subscribe(param=>{
 let fileName=file.name;
-  this.project._images.push("http://localhost:8090/uploads/"+fileName)
+  this.project._images.push(ConnectionService.link+"/uploads/"+fileName)
  
 })
 }
