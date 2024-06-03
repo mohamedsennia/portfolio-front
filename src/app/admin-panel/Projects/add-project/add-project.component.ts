@@ -77,7 +77,12 @@ subscreptions:Subscription[]
     this.project._description=this.addProjectForm.value['Descripition']
     this.project._codeURL=this.addProjectForm.value['codeURL']
     this.project._demoURL=this.addProjectForm.value['demoURL']
-    this.project._idExperience=this.addProjectForm.value['Experience']._experience_id
+    if(this.addProjectForm.value['Experience']._experience_id!=null){
+      this.project._idExperience=this.addProjectForm.value['Experience']._experience_id
+    }else{
+      this.project._idExperience=null
+    }
+   
    this.projectService.addProject(this.project).subscribe((param)=>{
   window.alert("Project Added")
   this.router.navigate(["/admin-panel/projects/1"])
