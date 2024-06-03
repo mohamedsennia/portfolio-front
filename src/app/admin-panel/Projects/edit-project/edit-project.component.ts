@@ -224,7 +224,7 @@ return []
       this.router.navigate(["/admin-panel/projects/1"])
     })
     }
-console.log(this.project)
+
    }
   ngOnDestroy(): void {
     for(let subscreption of this.subscreptions){

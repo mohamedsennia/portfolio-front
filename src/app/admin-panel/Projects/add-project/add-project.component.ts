@@ -77,7 +77,7 @@ subscreptions:Subscription[]
     this.project._description=this.addProjectForm.value['Descripition']
     this.project._codeURL=this.addProjectForm.value['codeURL']
     this.project._demoURL=this.addProjectForm.value['demoURL']
-    if(this.addProjectForm.value['Experience']._experience_id!=null){
+    if(this.addProjectForm.value['Experience']!=null){
       this.project._idExperience=this.addProjectForm.value['Experience']._experience_id
     }else{
       this.project._idExperience=null
