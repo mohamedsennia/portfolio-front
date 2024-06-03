@@ -14,7 +14,16 @@ export class ConnectionService{
     private apiLink=ConnectionService.link+"/api";
     private user:User;
     private logedIn:boolean;
-constructor(private httpClient:HttpClient) {this.logedIn=false; this.user=new User("","")
+constructor(private httpClient:HttpClient) {
+    if(localStorage.getItem("userKey")!=null){
+       
+        this.user=new User(localStorage.getItem("userKey"),localStorage.getItem("userRole"))
+        this.logedIn=true
+    }else{
+        console.log("b")
+        this.logedIn=false; this.user=new User("","")
+    }
+   
 }
 logIn(userEmail:string,password:string) :Observable<boolean>{
     return this.httpClient.post<User>(this.apiLink+"/auth/logIn",{
@@ -23,6 +32,8 @@ logIn(userEmail:string,password:string) :Observable<boolean>{
     },{headers:{}}).pipe(map(
         (response)=>{
             this.user=new User(response.token,response.role)
+            localStorage.setItem("userRole",this.user.role)
+            localStorage.setItem("userKey",this.user.token)
             this.logedIn=true;
         return true}
     ))
