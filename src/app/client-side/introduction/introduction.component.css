@@ -1,7 +1,15 @@
-#introduction{
-    width: 100%;
+:host{
+    display: flex; 
+    background-color: #252934;
     min-height: calc(96vh - 22px);
     max-height: fit-content;
+    align-items: center;
+    justify-content: center;
+}
+#introduction{
+   
+   
+    
     background-color: #252934;
     color:  white;
     display: flex;
@@ -37,4 +45,12 @@ background-color: cyan;
 }
 .button:hover i{
     transform: rotate(90deg);
+}
+@media only screen and (max-width: 768px){
+    .introduction-text{
+        font-size: 6vw;
+    }
+    .button{
+        font-size: 4vw;
+    }
 }

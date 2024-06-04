@@ -37,6 +37,8 @@ import { ClientSideComponent } from './client-side/client-side.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { EducationsListComponent } from './client-side/Education/educations-list/educations-list.component';
 import { SingleEducationComponent } from './client-side/Education/single-education/single-education.component';
+import { ClinetSideBarComponent } from './client-side/clinet-side-bar/clinet-side-bar.component';
+import { applicationService } from './app.service';
 
 
 
@@ -73,6 +75,7 @@ import { SingleEducationComponent } from './client-side/Education/single-educati
         ClientSideComponent,
         EducationsListComponent,
         SingleEducationComponent,
+        ClinetSideBarComponent,
         
       
   ],
@@ -84,7 +87,7 @@ import { SingleEducationComponent } from './client-side/Education/single-educati
     BrowserAnimationsModule,
     NgbModule
   ],
-  providers: [ConnectionService],
+  providers: [ConnectionService,applicationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

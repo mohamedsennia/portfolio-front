@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { applicationService } from 'src/app/app.service';
 
 @Component({
   selector: 'app-navbar',
@@ -6,6 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  
+  constructor(private appService:applicationService){
 
+  }
+  toggelHidden(){
+    this.appService.toggleHidden();
+  }
+  
 }

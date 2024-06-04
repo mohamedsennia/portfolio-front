@@ -10,7 +10,7 @@ import { Project } from "./Project/Project.model";
 @Injectable({providedIn:"root"})
 export class ConnectionService{
 
-    static link="https://protfolio-backend-production.up.railway.app";
+    static link="http://localhost:8090";
     private apiLink=ConnectionService.link+"/api";
     private user:User;
     private logedIn:boolean;
