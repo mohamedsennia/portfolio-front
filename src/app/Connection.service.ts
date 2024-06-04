@@ -21,7 +21,7 @@ constructor(private httpClient:HttpClient) {
         this.logedIn=true
     }else{
         
-        this.logedIn=false; this.user=new User("","")
+        this.logedIn=false; this.user=new User(""," ")
     }
    
 }
