@@ -1,0 +1,48 @@
+:host{
+   
+    height: 100vh;
+    min-width: 100vw;
+    max-width: fit-content;
+  display:none;
+    position: absolute;
+    color: white;
+    z-index: 200000;
+
+}
+.shadow{
+    width: 85%;
+    display: inline-block;
+    background-color:  rgba(0, 0, 0, 0.55);
+    height: 100vh;
+}
+nav{
+    display: inline-block;
+    width: 15%;
+    background-color: #252934;
+    padding:0% 3% ;
+}
+.active{
+    color: #E31B6D;
+}
+
+li:hover{
+    color: #E31B6D;
+    transition: 0.3s ease-in-out;
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    align-items: center;
+    
+}
+li{
+    margin-top: 15%;
+    cursor: pointer;
+}
+@media only screen and (max-width: 768px){
+    :host{
+        display: flex;
+    }
+}
