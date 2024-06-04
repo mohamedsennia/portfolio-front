@@ -10,14 +10,14 @@
 
 }
 .shadow{
-    width: 85%;
+    width: 35%;
     display: inline-block;
     background-color:  rgba(0, 0, 0, 0.55);
     height: 100vh;
 }
 nav{
     display: inline-block;
-    width: 15%;
+    width: 65%;
     background-color: #252934;
     padding:0% 3% ;
 }
