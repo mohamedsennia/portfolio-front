@@ -87,7 +87,7 @@ import { applicationService } from './app.service';
     BrowserAnimationsModule,
     NgbModule
   ],
-  providers: [ConnectionService,applicationService],
+  providers: [ConnectionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
