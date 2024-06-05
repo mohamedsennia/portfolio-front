@@ -7,7 +7,18 @@
     display: block;
     color:  white;
 }
-:host{
-    padding-right: 5%;
-    max-width: 95%;
+
+@media only screen and (max-width: 768px){
+    .line{
+        width: 5%;
+        
+        
+    }
+    .dot{
+        left: calc( 3%);
+    }
+    :host{
+        padding-right: 5%;
+        max-width: 95%;
+    }
 }

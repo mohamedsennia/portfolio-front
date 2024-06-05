@@ -19,7 +19,7 @@
     aspect-ratio: 1;
     background-color: #E31B6D;
     position: absolute;
-    left: calc(7%);
+    left: calc(8%);
     border-radius: 50%;
     
 }
@@ -95,4 +95,16 @@ p{
       to {
         transform: translateX(0%);
       }
+      
+}
+
+@media only screen and (max-width: 768px){
+    .line{
+        width: 5%;
+        
+        
+    }
+    .dot{
+        left: 3%;
+    }
 }
