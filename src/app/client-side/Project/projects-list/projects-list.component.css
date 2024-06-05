@@ -54,17 +54,7 @@ h1{
     display: inline-block;
   cursor: pointer;
 }
-.button:hover{
-    background-color: #E31B6D;
-    color:  white;
-    }
-    .project:hover .project-details{
-        opacity: 1
-    }
-    .project:hover .project-title{
-        padding-top: 25%;
-        
-    }
+
 #fields{
 width: 60%;
 margin: 2% auto;
@@ -119,4 +109,17 @@ justify-content: space-evenly;
         margin-top: 10px;
 
     }
+}
+@media only screen and (min-width: 769px){
+    .button:hover{
+        background-color: #E31B6D;
+        color:  white;
+        }
+        .project:hover .project-details{
+            opacity: 1
+        }
+        .project:hover .project-title{
+            padding-top: 25%;
+            
+        }  
 }
