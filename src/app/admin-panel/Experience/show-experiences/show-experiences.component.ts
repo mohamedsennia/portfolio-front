@@ -30,7 +30,7 @@ constructor(private experienceService:ExperienceService,private router:Router){
      if(experience._endDate!=null){
       return experience._endDate.toISOString().split('T')[0]
      }else{
-      return ""
+      return "ON going"
      }
   }
   edit(id:number){
@@ -39,9 +39,9 @@ constructor(private experienceService:ExperienceService,private router:Router){
   delete(experience:Experience){
    if(window.confirm("Are you sure you want to delete this experience")){
     this.experienceService.deleteExperience(experience).subscribe(param=>{
+      console.log(this.experiences)
       this.experiences.slice(this.experiences.indexOf(experience),1)
-
-      this.experiences=param
+      window.location.reload()
     })
    }
   }

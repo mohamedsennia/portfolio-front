@@ -10,13 +10,13 @@
             <th>Delete</th>
           </tr>
     <tr *ngFor="let experience of experiences;let i=index">
-        <td>{{i+1}}</td>
+        <td class="bolder">{{i+1}}</td>
         <td>{{experience._role}}</td>
         <td>{{experience._company}}</td>
         <td>{{experience._startDate.toISOString().split('T')[0]}}</td>
         <td>{{getEndDate(experience)}}</td>
-        <td><i (click)="edit(experience._experience_id)" class="clickable fa-regular fa-pen-to-square fa-xl"></i></td>
-        <td><i (click)="delete(experience)" class="clickable fa-solid fa-trash fa-xl" style="color: #63E6BE;"></i></td>
+        <td><i (click)="edit(experience._experience_id)" class="clickable fa-regular fa-pen-to-square "></i></td>
+        <td><i (click)="delete(experience)" class="clickable fa-solid fa-trash " style="color: #63E6BE;"></i></td>
     </tr>
     </table>
     <div class="Button clickable" [routerLink]="['/admin-panel/experiences/addExperience']">Add Experience</div>

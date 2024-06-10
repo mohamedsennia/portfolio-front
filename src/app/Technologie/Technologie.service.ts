@@ -17,7 +17,7 @@ this.technologies=null
 
 getTechnologies():Technologie[] | Observable<any []>{
 if(this.technologies!=null){
-    return this.technologies
+    return this.technologies.slice()
 }
 
 this.getTechs.unsubscribe()
@@ -25,7 +25,7 @@ return this.connectionService.getTechnologies().pipe(map((param)=>
 {
   
     this.technologies=param
-    return param
+    return param.slice()
 }))
 }
 deleteTechnologie(technologie:Technologie){

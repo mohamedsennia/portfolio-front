@@ -35,7 +35,14 @@ delete(education: Education) {
   if(window.confirm("Are you sure you want to delete this education")){
   this.connectionSubsecribtions.push (this.educationService.deleteEducation(education).subscribe((param)=>{
   this.educations=param
+  window.location.reload()
   }))}
+  }
+  getEndDate(education:Education){
+    if(education._endDate!=null){
+      return education._endDate.toISOString().split('T')[0]
+    }
+    return "Still going"
   }
 ngOnDestroy(): void {
  for (let subscription of this.connectionSubsecribtions){subscription.unsubscribe()}

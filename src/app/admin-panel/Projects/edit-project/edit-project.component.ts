@@ -120,20 +120,27 @@ export class EditProjectComponent implements OnInit,OnDestroy{
           
           if(f.equals(projectField)){
             
-            this.fields.splice(this.fields.indexOf(f))
+            this.fields.splice(this.fields.indexOf(f),1)
           }
         }
       }
       for(let t of this.techs){
         for(let projectTech of this.project._technologies){
           if(t.equals(projectTech)){
-            this.techs.splice(this.techs.indexOf(t))
+            this.techs.splice(this.techs.indexOf(t),1)
           }
         }
       }
      }))
     }))
-    
+    const fileInput = 
+    document.getElementById('fileInput');
+const customButton = 
+    document.querySelector('.custom-file-upload .button');
+
+customButton.addEventListener('click', () => {
+  fileInput.click();
+});
   }
 
 
@@ -171,7 +178,7 @@ return []
     
     this.connectionService.uploadFile(formData).subscribe(param=>{
     let fileName=file.name;
-      this.project._images.push("http://localhost:8090/uploads/"+fileName)
+      this.project._images.push(ConnectionService.link+"/uploads/"+fileName)
      
     })
 
@@ -186,18 +193,19 @@ return []
     this.ExperienceProject=!this.ExperienceProject;
   }
   addTech(){
+    if(this.editProjectForm.value['Technologies']!=null&&this.editProjectForm.value['Technologies']!=''){
     this.project._technologies.push(this.editProjectForm.value['Technologies'])
     this.techs.splice(this.techs.indexOf(this.editProjectForm.value['Technologies']),1)
     this.editProjectForm.patchValue({
-      "Technologies":null
-    })
+      "Technologies":''
+    })}
   }
   addField(){
-    if(this.editProjectForm.value['Fields']!=null){
+    if(this.editProjectForm.value['Fields']!=null&&this.editProjectForm.value['Fields']!=''){
       this.project._fields.push(this.editProjectForm.value['Fields'])
       this.fields.splice(this.fields.indexOf(this.editProjectForm.value['Fields']),1)
       this.editProjectForm.patchValue({
-        "Fields":null
+        "Fields":''
       })
     }
   }

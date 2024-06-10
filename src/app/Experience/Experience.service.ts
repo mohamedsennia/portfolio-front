@@ -16,7 +16,7 @@ constructor(private connectionService:ConnectionService){
 }
 getExperiences():Experience[]|Observable<Experience[]>{
 if(this.experiences!=null){
-return this.experiences
+return this.experiences.slice()
 }else{
     this.getExperiencesSubscription.unsubscribe()
     return this.connectionService.getExperiences().pipe(map(param=>{
@@ -31,7 +31,7 @@ return this.experiences
        }
        
         this.experiences=param;
-        return param
+        return param.slice()
     }))
 }
 }
@@ -49,6 +49,7 @@ getExperienceById(id:number){
 addExperience(experience:Experience){
    return this.connectionService.addExperience(experience).pipe(map(param=>{
         experience._experience_id=param
+       
         this.experiences.push(experience)
     }))
 }
@@ -61,6 +62,7 @@ editExperience(experience:Experience){
 }
 deleteExperience(experience:Experience){
     return this.connectionService.deleteExperience(experience).pipe(map(param=>{
+        
         this.experiences.slice(this.experiences.indexOf(experience),1)
         return this.experiences
     }))

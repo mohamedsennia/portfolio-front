@@ -69,6 +69,14 @@ subscreptions:Subscription[]
   }else{
     this.AllTechnologies=this.technologieService.getTechnologies() as Technologie[]
   }
+  const fileInput = 
+  document.getElementById('fileInput');
+const customButton = 
+  document.querySelector('.custom-file-upload .button');
+
+customButton.addEventListener('click', () => {
+fileInput.click();
+});
  }
  addProject(){
 
@@ -90,19 +98,20 @@ subscreptions:Subscription[]
    }
  }
  addTech(){
- 
+  if(this.addProjectForm.value['Technologies']!=null && this.addProjectForm.value['Technologies']!=''){
   this.project._technologies.push(this.addProjectForm.value['Technologies'])
   this.AllTechnologies.splice(this.AllTechnologies.indexOf(this.addProjectForm.value['Technologies']),1)
   this.addProjectForm.patchValue({
-    "Technologies":null
+    "Technologies":''
   })
+}
  }
  addField(){
-  if(this.addProjectForm.value['Fields']!=null){
+  if(this.addProjectForm.value['Fields']!=null && this.addProjectForm.value['Fields']!=''){
     this.project._fields.push(this.addProjectForm.value['Fields'])
     this.AllFields.splice(this.AllFields.indexOf(this.addProjectForm.value['Fields']),1)
     this.addProjectForm.patchValue({
-      "Fields":null
+      "Fields":""
     })
   }
 

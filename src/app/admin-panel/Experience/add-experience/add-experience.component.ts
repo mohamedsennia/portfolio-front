@@ -27,8 +27,12 @@ export class AddExperienceComponent implements OnInit {
   addEducation(){
 
     if(this.addExperienceForm.valid){
-      this.experienceService.addExperience(new Experience(null,this.addExperienceForm.value["Role"],this.addExperienceForm.value["Company"],this.addExperienceForm.value["startDate"],
-      this.addExperienceForm.value["endDate"],this.addExperienceForm.value["Descripition"],[]
+      let endDate=null;
+      if(this.addExperienceForm.value["endDate"]!=null){
+        endDate=new Date( this.addExperienceForm.value["endDate"])
+      }
+      this.experienceService.addExperience(new Experience(null,this.addExperienceForm.value["Role"],this.addExperienceForm.value["Company"],new Date(this.addExperienceForm.value["startDate"]),
+     endDate,this.addExperienceForm.value["Descripition"],[]
       )).subscribe(param=>{
         this.route.navigate(['/admin-panel/experiences/1'])
       })

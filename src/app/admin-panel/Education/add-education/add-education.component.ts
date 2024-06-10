@@ -28,7 +28,14 @@ export class AddEducationComponent implements OnInit{
     addEducation(){
 
       if(this.addEducationForm.valid){
-        this.educationService.addEducation(new Education(null,this.addEducationForm.value["DegreeName"],this.addEducationForm.value["SchoolName"],this.addEducationForm.value["startDate"],this.addEducationForm.value["endDate"],this.addEducationForm.value["Descripition"])).subscribe()
+        let endDate=null;
+        if(this.addEducationForm.value["endDate"]!=null){
+          endDate=this.addEducationForm.value["endDate"];
+        }
+        this.educationService.addEducation(new Education(null,this.addEducationForm.value["DegreeName"],this.addEducationForm.value["SchoolName"],new Date(this.addEducationForm.value["startDate"]),endDate,this.addEducationForm.value["Descripition"])).subscribe((param)=>{
+          window.alert("Project Added")
+          this.router.navigate(["/admin-panel/educations/1"])
+        })
 
       }
     }

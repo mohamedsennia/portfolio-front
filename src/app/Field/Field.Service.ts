@@ -15,11 +15,11 @@ constructor(private connectionService:ConnectionService){
    })
 }
 getFields():Field[]|Observable<Field[]>{
-    if(this.fields!=null){return this.fields}
+    if(this.fields!=null){return this.fields.slice()}
     this.getFieldsSub.unsubscribe()
     return this.connectionService.getFields().pipe(map(param=>{
         this.fields=param
-        return param
+        return param.slice()
 
     }))
 }
