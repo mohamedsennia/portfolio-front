@@ -4,7 +4,7 @@
     min-width: 100vw;
     max-width: fit-content;
   display:none;
-    position: absolute;
+    position: fixed;
     color: white;
     z-index: 200000;
 
