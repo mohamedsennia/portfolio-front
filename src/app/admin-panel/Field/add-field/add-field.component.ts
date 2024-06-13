@@ -20,6 +20,7 @@ constructor(private fieldService:FieldSerivce,private router:Router){
     })
   }
   addField(){
+    if(this.fieldService.isAdmin()){
    if(this.addFieldForm.valid){//console.log()
     this.fieldService.addField(new Field(null,this.addFieldForm.value["FieldName"]))
     window.alert("Field add successfully")
@@ -27,5 +28,8 @@ constructor(private fieldService:FieldSerivce,private router:Router){
     
    
    }
+  }else{
+    window.alert("You must be an admin to do this action")
+  }
   }
 }

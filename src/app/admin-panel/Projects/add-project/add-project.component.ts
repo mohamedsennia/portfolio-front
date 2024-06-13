@@ -79,7 +79,7 @@ fileInput.click();
 });
  }
  addProject(){
-
+  if(this.projectService.isAdmin()){
    if(this.addProjectForm.valid){
     this.project._name=this.addProjectForm.value['ProjectName']
     this.project._description=this.addProjectForm.value['Descripition']
@@ -95,6 +95,8 @@ fileInput.click();
   window.alert("Project Added")
   this.router.navigate(["/admin-panel/projects/1"])
  })
+   }}else{
+    window.alert("You must be an admin to do this action")
    }
  }
  addTech(){
@@ -133,13 +135,16 @@ let file:File=event.target.files[0];
 const formData = new FormData();
 formData.append('file', file);
 
-
+if(this.projectService.isAdmin()){
 
 this.connectionService.uploadFile(formData).subscribe(param=>{
 let fileName=file.name;
   this.project._images.push(ConnectionService.link+"/uploads/"+fileName)
  
 })
+}else{
+  window.alert("You must be an admin to do this action")
+}
 }
 removeImage(image){
   this.project._images.splice(this.project._images.indexOf(image),1)

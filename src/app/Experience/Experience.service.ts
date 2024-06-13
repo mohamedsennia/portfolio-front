@@ -67,4 +67,7 @@ deleteExperience(experience:Experience){
         return this.experiences
     }))
 }
+isAdmin(){
+    return this.connectionService.isAdmin()
+}
 }

@@ -27,13 +27,20 @@ export class AddTechnologieComponent implements OnInit, OnDestroy{
       })
     }
     addField(){
+      
      if(this.addTechnologieForm.valid){//console.log()
+      if(this.technologieService.isAdmin()){
+
+      
       this.technologieService.addTechnologie(new Technologie(null,this.addTechnologieForm.value["TechName"],this.addTechnologieForm.value["TechIcon"]))
       window.alert("Technologie add successfully")
         this.router.navigate(["/admin-panel/technologies/1"])
 
 
+     }else{
+      window.alert("You must be an admin to do this action")
      }
+    }
     }
     ngOnDestroy(): void {
       for (let subscription of this.subscriptions){

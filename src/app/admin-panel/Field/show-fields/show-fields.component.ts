@@ -34,10 +34,13 @@ edit(id:number){
 this.router.navigate(["admin-panel/fields/editField/"+id])
 }
 delete(field: Field) {
+  if(this.fieldService.isAdmin()){
   if(window.confirm("Are you sure you want to delete this field")){
   this.connectionSubsecribtions.push (this.fieldService.deleteField(field).subscribe((param)=>{
   this.fields=param
-  }))}
+  }))}}else{
+    window.alert("You must be an admin to do this action")
+  }
   }
 ngOnDestroy(): void {
  for (let subscription of this.connectionSubsecribtions){subscription.unsubscribe()}

@@ -39,4 +39,7 @@ deleteField(field:Field){
         return this.fields
     }))
 }
+isAdmin(){
+    return this.connectionService.isAdmin()
+}
 }

@@ -28,11 +28,15 @@ export class EditFieldComponent {
       })
     }
     editField(){
+      if(this.fieldService.isAdmin()){
      if(this.editFieldForm.valid){//console.log()
       this.field._fieldName=this.editFieldForm.value['FieldName']
  
       this.fieldService.editField(this.field); 
        window.alert("Field edited successfully")
       this.router.navigate(["/admin-panel/fields/1"])    }
+    }else{
+      window.alert("You must be an admin to do this action")
+    }
     }
 }

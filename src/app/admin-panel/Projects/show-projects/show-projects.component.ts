@@ -34,11 +34,14 @@ ngOnInit(): void {
     this.router.navigate(["admin-panel/projects/editProject/"+id])
     }
     delete(project: Project) {
+      if(this.projectService.isAdmin()){
       if(window.confirm("Are you sure you want to delete this field")){
         
       this.subscreptions.push (this.projectService.deleteProject(project).subscribe((param)=>{
         
         this.projects=param
-      }))}
+      }))}}else{
+        window.alert("You must be an admin to do this action")
+      }
       }
 }

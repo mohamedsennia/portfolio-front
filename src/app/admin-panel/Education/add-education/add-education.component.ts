@@ -26,7 +26,7 @@ export class AddEducationComponent implements OnInit{
       },)
     }
     addEducation(){
-
+      if(this.educationService.isAdmin()){
       if(this.addEducationForm.valid){
         let endDate=null;
         if(this.addEducationForm.value["endDate"]!=null){
@@ -37,6 +37,8 @@ export class AddEducationComponent implements OnInit{
           this.router.navigate(["/admin-panel/educations/1"])
         })
 
+      }}else{
+        window.alert("You must be an admin to do this action")
       }
     }
     toggleStillGoing(){

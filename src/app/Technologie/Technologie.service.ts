@@ -28,6 +28,9 @@ return this.connectionService.getTechnologies().pipe(map((param)=>
     return param.slice()
 }))
 }
+isAdmin(){
+    return this.connectionService.isAdmin()
+}
 deleteTechnologie(technologie:Technologie){
   return  this.connectionService.deleteTechnologie(technologie).pipe(map((param)=>{
     if(this.technologies==null){
@@ -42,7 +45,7 @@ getTechnologieById(id:number){console.log(this.technologies)
  return this.connectionService.getTechnologieById(id);   
 }
 addTechnologie(technologie:Technologie){
-    
+ 
 return this.connectionService.addTechnologie(technologie).pipe(map((param)=>{
     technologie.id=param
     if(this.technologies==null){

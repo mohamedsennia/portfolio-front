@@ -25,7 +25,7 @@ export class AddExperienceComponent implements OnInit {
     })
   }
   addEducation(){
-
+    if(this.experienceService.isAdmin()){
     if(this.addExperienceForm.valid){
       let endDate=null;
       if(this.addExperienceForm.value["endDate"]!=null){
@@ -37,6 +37,8 @@ export class AddExperienceComponent implements OnInit {
         this.route.navigate(['/admin-panel/experiences/1'])
       })
 
+    }}else{
+      window.alert("You must be an admin to do this action")
     }
   }
   toggleStillGoing(){

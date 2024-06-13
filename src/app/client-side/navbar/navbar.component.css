@@ -16,15 +16,27 @@ nav{
     padding: 10px 0px;
     height: 4vh;
     border-bottom: 2px solid rgb(34, 142, 142);
+    display: flex; 
+    justify-content: space-between;
 }
 li:hover{
     color: #E31B6D;
     transition: 0.3s ease-in-out;
 }
+#login{
+    display: inline-block;
+    margin-right: 3%;
+    color: #E31B6D;
+    cursor: pointer;
+}
+#login:hover{
+color: white;
+}
 ul{
     list-style-type: none;
     display: flex;
     font-family: sans-serif;
+    width: 80%;
     
     
 }

@@ -52,7 +52,7 @@ constructor(private experienceService:ExperienceService,private router:Router,pr
     })
   }
   editExperience(){
-
+    if(this.experienceService.isAdmin()){
     if(this.editExperienceForm.valid){
       this.experienceService.editExperience(new Experience(this.experience._experience_id,this.editExperienceForm.value["Role"],this.editExperienceForm.value["Company"],new Date(this.editExperienceForm.value["startDate"]),new Date(this.editExperienceForm.value["endDate"]),this.editExperienceForm.value["Descripition"],this.experience._projects)).subscribe(
         param=>{
@@ -61,6 +61,8 @@ constructor(private experienceService:ExperienceService,private router:Router,pr
         }
       )
 
+    }}else{
+      window.alert("You must be an admin to do this action")
     }
   }
   toggleStillGoing(){

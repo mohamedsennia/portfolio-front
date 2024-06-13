@@ -37,13 +37,16 @@ constructor(private experienceService:ExperienceService,private router:Router){
     this.router.navigate(["admin-panel/experiences/editExperience/"+id])
   }
   delete(experience:Experience){
+    if(this.experienceService.isAdmin()){
    if(window.confirm("Are you sure you want to delete this experience")){
     this.experienceService.deleteExperience(experience).subscribe(param=>{
       console.log(this.experiences)
       this.experiences.slice(this.experiences.indexOf(experience),1)
       window.location.reload()
     })
-   }
+   }}else{
+    window.alert("You must be an admin to do this action")
+  }
   }
   ngOnDestroy(): void {
     for(let subscreption of this.subscreptions){

@@ -174,14 +174,16 @@ return []
     const formData = new FormData();
     formData.append('file', file);
     
-    
+    if(this.projectService.isAdmin()){
     
     this.connectionService.uploadFile(formData).subscribe(param=>{
     let fileName=file.name;
       this.project._images.push(ConnectionService.link+"/uploads/"+fileName)
      
     })
-
+  }else{
+      window.alert("You must be an admin to do this action")
+    }
   }
   toggleExperienceProject(){
 
@@ -222,6 +224,7 @@ return []
     this.techs.push(tech)
   }
    editProject(){
+    if(this.projectService.isAdmin()){
     if(this.editProjectForm.valid){
       this.project._name=this.editProjectForm.value['ProjectName']
     this.project._description=this.editProjectForm.value['Descripition']
@@ -232,7 +235,9 @@ return []
       this.router.navigate(["/admin-panel/projects/1"])
     })
     }
-
+  }else{
+    window.alert("You must be an admin to do this action")
+  }
    }
   ngOnDestroy(): void {
     for(let subscreption of this.subscreptions){

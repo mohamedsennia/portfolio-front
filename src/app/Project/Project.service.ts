@@ -83,4 +83,7 @@ deleteProject(project:Project){
         return this.projects
     }))
 }
+isAdmin(){
+    return this.connectionService.isAdmin()
+}
 }

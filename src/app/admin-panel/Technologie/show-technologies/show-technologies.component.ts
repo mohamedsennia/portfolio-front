@@ -39,11 +39,14 @@ edit(id:number){
 this.router.navigate(["admin-panel/technologies/editTechnologie/"+id])
 }
 delete(technologie: Technologie) {
+  if(this.technologieService.isAdmin()){
   if(window.confirm("Are you sure you want to delete this field")){
   this.connectionSubsecribtions.push (this.technologieService.deleteTechnologie(technologie).subscribe((param)=>{
     
     this.technologies=param
-  }))}
+  }))}}else{
+    window.alert("You must be an admin to do this action")
+  }
   }
 ngOnDestroy(): void {
  for (let subscription of this.connectionSubsecribtions){subscription.unsubscribe()}

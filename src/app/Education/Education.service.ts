@@ -53,4 +53,7 @@ deleteEducation(education:Education){
         return this.educations
     }))
 }
+isAdmin(){
+    return this.connectionService.isAdmin()
+}
 }

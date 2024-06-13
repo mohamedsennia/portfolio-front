@@ -44,7 +44,7 @@ export class EditEducationComponent {
       })
     }
     editEducation(){
-
+      if(this.educationService.isAdmin()){
       if(this.editEducationForm.valid){
         this.educationService.editEducation(new Education(this.education.id,this.editEducationForm.value["DegreeName"],this.editEducationForm.value["SchoolName"],new Date(this.editEducationForm.value["startDate"]),new Date(this.editEducationForm.value["endDate"]),this.editEducationForm.value["Descripition"])).subscribe(
           param=>{
@@ -53,6 +53,8 @@ export class EditEducationComponent {
           }
         )
 
+      }}else{
+        window.alert("You must be an admin to do this action")
       }
     }
     toggleStillGoing(){

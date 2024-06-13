@@ -32,11 +32,14 @@ edit(id:number){
 this.router.navigate(["admin-panel/educations/editEducation/"+id])
 }
 delete(education: Education) {
+  if(this.educationService.isAdmin()){
   if(window.confirm("Are you sure you want to delete this education")){
   this.connectionSubsecribtions.push (this.educationService.deleteEducation(education).subscribe((param)=>{
   this.educations=param
   window.location.reload()
-  }))}
+  }))}}else{
+    window.alert("You must be an admin to do this action")
+  }
   }
   getEndDate(education:Education){
     if(education._endDate!=null){

@@ -35,6 +35,8 @@ export class EditTechnologieComponent {
     }
     editTechnologie(){
     if(this.editTechForm.valid){//console.log()
+      if(this.technologieService.isAdmin()){
+      
       let prevTech=JSON.parse(JSON.stringify(this.technologie))
       this.technologie._name=this.editTechForm.value['TechName']
     this.technologie._icon=this.editTechForm.value['TechIcon']
@@ -42,6 +44,9 @@ export class EditTechnologieComponent {
       this.technologieService.editTechnologie(this.technologie)
       window.alert("Field edited successfully")
         this.router.navigate(["/admin-panel/technologies/1"])
+    }else{
+      window.alert("You must be an admin to do this action")
+    }
     }//fa-brands fa-react fa-2xl
     }
 }
