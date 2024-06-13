@@ -12,7 +12,7 @@
 
     <h2> Skills</h2>
     <div id="skills">
-        <span *ngFor="let tech of technologies" >{{tech_name}}</span>
+        <span class="tech" *ngFor="let tech of technologies" ><i [class]="tech._icon"></i>{{tech._name}}</span>
     </div>
 
 </div>

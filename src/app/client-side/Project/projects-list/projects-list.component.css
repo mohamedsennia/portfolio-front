@@ -17,6 +17,7 @@ h1{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: 5%;
+    row-gap: 2%;
 }
 .project{
     transition: all 1s ease-in;
